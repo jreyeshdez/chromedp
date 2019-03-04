@@ -1,4 +1,4 @@
-module github.com/chromedp/chromedp
+module github.com/jreyeshdez/chromedp
 
 require (
 	github.com/chromedp/cdproto v0.0.0-20190217000753-2d8e8962ceb2
