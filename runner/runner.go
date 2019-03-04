@@ -8,7 +8,7 @@ import (
 	"os"
 	"os/exec"
 	"regexp"
-	"runtime"
+//	"runtime"
 	"sync"
 	"syscall"
 
@@ -247,10 +247,8 @@ func (r *Runner) Shutdown(ctxt context.Context, opts ...client.Option) error {
 	//
 	// TODO: add other behavior here for more process options on shutdown?
 	if r.cmd != nil && r.cmd.Process != nil {
-		switch runtime.GOOS {
-		case "darwin", "linux":
-			return r.cmd.Process.Signal(syscall.SIGTERM)
-		}
+		return r.cmd.Process.Signal(syscall.SIGTERM)
+
 	}
 
 	return nil
